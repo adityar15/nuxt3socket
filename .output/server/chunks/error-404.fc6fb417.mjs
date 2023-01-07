@@ -1,5 +1,5 @@
 import { _ as _export_sfc, a as __nuxt_component_0$1 } from './server.mjs';
-import { u as useHead } from './composables.076a04ef.mjs';
+import { u as useHead } from './composables.b26ab4a3.mjs';
 import { mergeProps, withCtx, createTextVNode, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent } from 'vue/server-renderer';
 import 'ofetch';
@@ -10,12 +10,10 @@ import 'h3';
 import '@unhead/vue';
 import '@unhead/dom';
 import 'vue-router';
-import 'socket.io';
-import 'http';
-import 'socket.io-client';
 import 'defu';
 import './node-server.mjs';
 import 'node-fetch-native/polyfill';
+import 'http';
 import 'https';
 import 'destr';
 import 'unenv/runtime/fetch/index';
@@ -98,4 +96,4 @@ _sfc_main.setup = (props, ctx) => {
 const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-30d2164e"]]);
 
 export { error404 as default };
-//# sourceMappingURL=error-404.11671119.mjs.map
+//# sourceMappingURL=error-404.fc6fb417.mjs.map

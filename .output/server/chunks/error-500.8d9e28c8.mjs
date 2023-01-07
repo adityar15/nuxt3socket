@@ -1,4 +1,4 @@
-import { u as useHead } from './composables.076a04ef.mjs';
+import { u as useHead } from './composables.b26ab4a3.mjs';
 import { mergeProps, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate } from 'vue/server-renderer';
 import { _ as _export_sfc } from './server.mjs';
@@ -10,12 +10,10 @@ import 'h3';
 import '@unhead/vue';
 import '@unhead/dom';
 import 'vue-router';
-import 'socket.io';
-import 'http';
-import 'socket.io-client';
 import 'defu';
 import './node-server.mjs';
 import 'node-fetch-native/polyfill';
+import 'http';
 import 'https';
 import 'destr';
 import 'unenv/runtime/fetch/index';
@@ -77,4 +75,4 @@ _sfc_main.setup = (props, ctx) => {
 const error500 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-32388612"]]);
 
 export { error500 as default };
-//# sourceMappingURL=error-500.ba85fe51.mjs.map
+//# sourceMappingURL=error-500.8d9e28c8.mjs.map

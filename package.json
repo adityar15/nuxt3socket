@@ -8,6 +8,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "@types/ws": "^8.5.4",
     "autoprefixer": "^10.4.13",
     "nuxt": "3.0.0",
     "postcss": "^8.4.21",
@@ -15,7 +16,6 @@
   },
   "dependencies": {
     "jiti": "^1.16.1",
-    "socket.io": "^4.5.4",
-    "socket.io-client": "^4.5.4"
+    "ws": "^8.12.0"
   }
 }

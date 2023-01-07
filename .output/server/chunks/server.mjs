@@ -7,13 +7,11 @@ import { createError as createError$1, sendRedirect } from 'h3';
 import { useHead, createHead as createHead$1 } from '@unhead/vue';
 import { renderDOMHead, debouncedRenderDOMHead } from '@unhead/dom';
 import { RouterView, createMemoryHistory, createRouter } from 'vue-router';
-import { Server } from 'socket.io';
-import http from 'http';
-import io$1 from 'socket.io-client';
 import { ssrRenderSuspense, ssrRenderComponent, ssrRenderAttrs } from 'vue/server-renderer';
 import { defu } from 'defu';
 import { a as useRuntimeConfig$1 } from './node-server.mjs';
 import 'node-fetch-native/polyfill';
+import 'http';
 import 'https';
 import 'destr';
 import 'unenv/runtime/fetch/index';
@@ -532,7 +530,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./index.e75b3d33.mjs').then((m) => m.default || m)
+    component: () => import('./index.d9d269db.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -734,51 +732,10 @@ const node_modules_nuxt_dist_pages_runtime_router_mjs_qNv5Ky2ZmB = defineNuxtPlu
   });
   return { provide: { router } };
 });
-let io;
-const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroApp) => {
-  const server = http.createServer(nitroApp);
-  const port = 1e4;
-  if (!io) {
-    io = new Server({ cors: { origin: "*" } });
-    io.attach(server);
-    io.on("connection", (socket) => {
-      socket.on("connect", (socket2) => {
-        console.log("connected", socket2.id);
-      });
-      socket.on("disconnect", () => {
-        console.log("disconnected", socket.id);
-      });
-      socket.on("message", (data) => {
-        socket.emit("message", `Hello from server ${data}`);
-      });
-      socket.on("connect_error", (err) => {
-        console.log("connect_error", err);
-      });
-    });
-    io.on("close", () => {
-      console.log("closed...");
-    });
-    globalThis.io = io;
-    if (io) {
-      server.listen(port);
-      console.log(`Socket ready at port ${port}`);
-    }
-  }
-});
-const plugins_socketclient_ts_ssFYL5iDMi = defineNuxtPlugin(() => {
-  const socket = io$1("https://nuxt3socket.onrender.com:10000");
-  return {
-    provide: {
-      io: socket
-    }
-  };
-});
 const _plugins = [
   _nuxt_components_plugin_mjs_KR1HBZs4kY,
   node_modules_nuxt_dist_head_runtime_lib_vueuse_head_plugin_mjs_D7WGfuP1A0,
-  node_modules_nuxt_dist_pages_runtime_router_mjs_qNv5Ky2ZmB,
-  plugins_socketserver_server_ts_IcPfaEKERO,
-  plugins_socketclient_ts_ssFYL5iDMi
+  node_modules_nuxt_dist_pages_runtime_router_mjs_qNv5Ky2ZmB
 ];
 const interpolatePath = (route, match) => {
   return match.path.replace(/(:\w+)\([^)]+\)/g, "$1").replace(/(:\w+)[?+*]/g, "$1").replace(/:\w+/g, (r) => {
@@ -920,7 +877,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./error-component.66975a0d.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./error-component.e8739e4b.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

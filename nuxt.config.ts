@@ -6,16 +6,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  
 
   css: ["@/assets/css/main.css"],
-  //   serverHandlers: [
-  //     {
-  //       route: "/socket.io",
-  //       handler: "~/server-middleware/socket",
-  //     },
-  //   ],
 
-  plugins: ["~/plugins/socketserver.server.ts"],
-  
+  modules: ["~/modules/socket.ts"],
 })
