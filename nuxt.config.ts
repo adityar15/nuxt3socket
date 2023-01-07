@@ -18,6 +18,6 @@ export default defineNuxtConfig({
   plugins: ["~/plugins/socketserver.server.ts"],
 
   nitro:{
-    preset: 'render-com'
+    preset: 'netlify'
   }
 })
