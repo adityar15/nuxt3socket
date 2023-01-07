@@ -1,6 +1,6 @@
+import { defineComponent, ref, mergeProps, unref, useSSRContext } from 'vue';
 import { u as useNuxtApp } from './server.mjs';
-import { defineComponent, mergeProps, useSSRContext } from 'vue';
-import { ssrRenderAttrs } from 'vue/server-renderer';
+import { ssrRenderAttrs, ssrInterpolate } from 'vue/server-renderer';
 import 'ofetch';
 import 'hookable';
 import 'unctx';
@@ -30,9 +30,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "index",
   __ssrInlineRender: true,
   setup(__props) {
+    const message = ref("");
     useNuxtApp();
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "h-screen w-screen grid place-items-center bg-black" }, _attrs))}><button class="bg-purple-500 text-gray-50 font-semibold px-5 py-2 rounded-lg">Click me to send random message</button></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "h-screen w-screen grid place-items-center bg-black" }, _attrs))}><span class="flex flex-col items-centers space-y-4"><span class="text-gray-100">${ssrInterpolate(unref(message))}</span><button class="bg-purple-500 text-gray-50 font-semibold px-5 py-2 rounded-lg">Click me to send random message</button></span></div>`);
     };
   }
 });
@@ -44,4 +45,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index.778ff36c.mjs.map
+//# sourceMappingURL=index.fec6d2da.mjs.map

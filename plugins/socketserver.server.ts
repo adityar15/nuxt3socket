@@ -23,7 +23,13 @@ export default defineNuxtPlugin(async (nitroApp) => {
       socket.on("message", (data) => {
         socket.emit("message", `Hello from server ${data}`)
       })
+
+      socket.on("connect_error", (err)=>{
+        console.log("connect_error", err)
+      })
     })
+
+    
    
     globalThis.io = io
 
