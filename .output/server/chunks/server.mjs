@@ -8,12 +8,12 @@ import { useHead, createHead as createHead$1 } from '@unhead/vue';
 import { renderDOMHead, debouncedRenderDOMHead } from '@unhead/dom';
 import { RouterView, createMemoryHistory, createRouter } from 'vue-router';
 import { Server } from 'socket.io';
+import http from 'http';
 import io$1 from 'socket.io-client';
 import { ssrRenderSuspense, ssrRenderComponent, ssrRenderAttrs } from 'vue/server-renderer';
 import { defu } from 'defu';
 import { a as useRuntimeConfig$1 } from './node-server.mjs';
 import 'node-fetch-native/polyfill';
-import 'http';
 import 'https';
 import 'destr';
 import 'unenv/runtime/fetch/index';
@@ -532,7 +532,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./index.c1a36a14.mjs').then((m) => m.default || m)
+    component: () => import('./index.4897f6ef.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -736,10 +736,11 @@ const node_modules_nuxt_dist_pages_runtime_router_mjs_qNv5Ky2ZmB = defineNuxtPlu
 });
 let io;
 const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroApp) => {
+  const server = http.createServer(nitroApp);
   const port = 3001;
   if (!io) {
     io = new Server({ cors: { origin: "*" } });
-    io.listen(port);
+    io.attach(server);
     io.on("connection", (socket) => {
       socket.on("connect", (socket2) => {
         console.log("connected", socket2.id);
@@ -758,8 +759,10 @@ const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroA
       console.log("closed...");
     });
     globalThis.io = io;
-    if (io)
+    if (io) {
+      server.listen(port);
       console.log(`Socket ready at port ${port}`);
+    }
   }
 });
 const plugins_socketclient_ts_ssFYL5iDMi = defineNuxtPlugin(() => {
@@ -917,7 +920,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./error-component.fd46c886.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./error-component.aafa2143.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

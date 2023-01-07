@@ -10,11 +10,11 @@ import '@unhead/vue';
 import '@unhead/dom';
 import 'vue-router';
 import 'socket.io';
+import 'http';
 import 'socket.io-client';
 import 'defu';
 import './node-server.mjs';
 import 'node-fetch-native/polyfill';
-import 'http';
 import 'https';
 import 'destr';
 import 'unenv/runtime/fetch/index';
@@ -45,4 +45,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index.c1a36a14.mjs.map
+//# sourceMappingURL=index.4897f6ef.mjs.map

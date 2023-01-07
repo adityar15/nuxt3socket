@@ -1,4 +1,6 @@
 import { Server } from "socket.io"
+import http from "http"
+
 declare global {
   var io: Server
 }
@@ -7,12 +9,18 @@ let io : Server
 
 export default defineNuxtPlugin(async (nitroApp) => {
 
+  const server = http.createServer(nitroApp)
+
   const port = 3001
 
+  
   if(!io)
   {
-    io = new Server({ cors: { origin: "*" }})
-    io.listen(port)
+    io = new Server({cors: {origin: "*"}})
+    
+    io.attach(server)
+
+
     io.on("connection", (socket) => {
       
       socket.on("connect", (socket) =>{
@@ -39,7 +47,10 @@ export default defineNuxtPlugin(async (nitroApp) => {
 
     globalThis.io = io
     if(io)
-    console.log(`Socket ready at port ${port}`)
+    {
+      server.listen(port)
+      console.log(`Socket ready at port ${port}`)
+    }
   }
 
 })
