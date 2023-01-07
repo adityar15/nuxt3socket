@@ -532,7 +532,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./index.f7bc11b0.mjs').then((m) => m.default || m)
+    component: () => import('./index.778ff36c.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -737,7 +737,7 @@ const node_modules_nuxt_dist_pages_runtime_router_mjs_qNv5Ky2ZmB = defineNuxtPlu
 let io;
 const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroApp) => {
   if (!io) {
-    io = new Server(10001, { cors: { origin: "*" } });
+    io = new Server(10001, { cors: { origin: "*" }, transports: ["websocket"] });
     io.on("connection", (socket) => {
       socket.on("connect", (socket2) => {
         console.log("connected", socket2.id);
@@ -910,7 +910,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./error-component.efa0e347.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./error-component.1718b5f9.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

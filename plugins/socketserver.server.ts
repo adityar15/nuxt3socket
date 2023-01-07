@@ -9,7 +9,7 @@ export default defineNuxtPlugin(async (nitroApp) => {
 
   if(!io)
   {
-    io = new Server(10001, { cors: { origin: "*" } })
+    io = new Server(10001, { cors: { origin: "*" }, transports:["websocket"]})
     io.on("connection", (socket) => {
       
       socket.on("connect", (socket) =>{

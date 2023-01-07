@@ -20,6 +20,9 @@ onMounted(()=>{
         $io.connect()
         console.log(`connect_timeout due to ${timeout}ms`);
     });
+    $io.on("conenct_failed", (err) => {
+        console.log(`conenct_failed due to ${err.message}`);
+    });
 })
 
 
