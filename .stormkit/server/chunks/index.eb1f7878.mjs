@@ -40,4 +40,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index.4e9ba7a3.mjs.map
+//# sourceMappingURL=index.eb1f7878.mjs.map
