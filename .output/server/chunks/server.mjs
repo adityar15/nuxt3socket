@@ -532,7 +532,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./index.6c8e7e84.mjs').then((m) => m.default || m)
+    component: () => import('./index.8685a50c.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -737,7 +737,7 @@ const node_modules_nuxt_dist_pages_runtime_router_mjs_qNv5Ky2ZmB = defineNuxtPlu
 let io;
 const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroApp) => {
   if (!io) {
-    io = new Server(10001, { cors: { origin: "*" }, transports: ["websocket"] });
+    io = new Server(3001, { cors: { origin: "*" } });
     io.on("connection", (socket) => {
       socket.on("connect", (socket2) => {
         console.log("connected", socket2.id);
@@ -757,9 +757,7 @@ const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroA
   }
 });
 const plugins_socketclient_ts_ssFYL5iDMi = defineNuxtPlugin(() => {
-  const socket = io$1("https://nuxt3socket-production.up.railway.app:10001", {
-    transports: ["websocket"]
-  });
+  const socket = io$1("https://nuxt3socket-production.up.railway.app:3001");
   return {
     provide: {
       io: socket
@@ -913,7 +911,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./error-component.29968970.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./error-component.992df9e2.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

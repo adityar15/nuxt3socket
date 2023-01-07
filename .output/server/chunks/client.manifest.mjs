@@ -2,7 +2,7 @@ const client_manifest = {
   "node_modules/nuxt/dist/app/entry.mjs": {
     "resourceType": "script",
     "module": true,
-    "file": "entry.7b56db52.js",
+    "file": "entry.be836a30.js",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -19,7 +19,7 @@ const client_manifest = {
   "virtual:nuxt:L:/VueJS/nuxt3socket/.nuxt/error-component.mjs": {
     "resourceType": "script",
     "module": true,
-    "file": "error-component.3d700edc.js",
+    "file": "error-component.b98ea302.js",
     "src": "virtual:nuxt:L:/VueJS/nuxt3socket/.nuxt/error-component.mjs",
     "isDynamicEntry": true,
     "imports": [
@@ -33,7 +33,7 @@ const client_manifest = {
   "pages/index.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "index.0ccf05f9.js",
+    "file": "index.e9ad9bd8.js",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -43,12 +43,12 @@ const client_manifest = {
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "error-404.a4ff9609.js",
+    "file": "error-404.198cef1d.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_composables.becb21f3.js"
+      "_composables.08e29823.js"
     ],
     "css": []
   },
@@ -56,10 +56,10 @@ const client_manifest = {
     "file": "error-404.23f2309d.css",
     "resourceType": "style"
   },
-  "_composables.becb21f3.js": {
+  "_composables.08e29823.js": {
     "resourceType": "script",
     "module": true,
-    "file": "composables.becb21f3.js",
+    "file": "composables.08e29823.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
@@ -67,11 +67,11 @@ const client_manifest = {
   "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "error-500.e1cb5d3e.js",
+    "file": "error-500.eebe4b8d.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_composables.becb21f3.js",
+      "_composables.08e29823.js",
       "node_modules/nuxt/dist/app/entry.mjs"
     ],
     "css": []
