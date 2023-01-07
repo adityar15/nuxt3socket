@@ -9,7 +9,7 @@ export default defineNuxtPlugin(async (nitroApp) => {
 
   if(!io)
   {
-    io = new Server(3001, { cors: { origin: "*" } })
+    io = new Server(10001, { cors: { origin: "*" } })
     io.on("connection", (socket) => {
       
       socket.on("connect", (socket) =>{
@@ -26,6 +26,8 @@ export default defineNuxtPlugin(async (nitroApp) => {
     })
    
     globalThis.io = io
+
+    console.log(`Socket ready at port`)
   }
 
 })

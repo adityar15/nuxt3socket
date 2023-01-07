@@ -1,4 +1,4 @@
-import { u as useHead } from './composables.11218f30.mjs';
+import { u as useHead } from './composables.97b6edda.mjs';
 import { mergeProps, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate } from 'vue/server-renderer';
 import { _ as _export_sfc } from './server.mjs';
@@ -77,4 +77,4 @@ _sfc_main.setup = (props, ctx) => {
 const error500 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-32388612"]]);
 
 export { error500 as default };
-//# sourceMappingURL=error-500.92605188.mjs.map
+//# sourceMappingURL=error-500.f1e60009.mjs.map
