@@ -16,17 +16,15 @@ export default defineNuxtModule({
       nuxt.hook("close", () => io.close())
 
       io.on("connection", (socket) => {
-        socket.on("connect", (socket) => {
-          console.log("connected", socket.id)
-        })
-
 
         socket.on("message", (data) => {
-          socket.send(`Hello from server ${data}`)
-        })
-
-        socket.on("connect_error", (err) => {
-          console.log("connect_error", err)
+            
+            io.clients.forEach((client) => {
+                if (client.readyState === WebSocket.OPEN) {
+                    client.send(data)
+                }
+            })
+            
         })
       })
       globalThis.io = io
