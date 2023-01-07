@@ -16,7 +16,7 @@ export default defineNuxtPlugin(async (nitroApp) => {
       })
   
       socket.on("message", (data) => {
-        socket.emit("message", "Hello from server")
+        socket.emit("message", `Hello from server ${data}`)
       })
     })
     globalThis.io = io
