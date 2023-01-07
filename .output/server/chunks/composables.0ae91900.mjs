@@ -5,4 +5,4 @@ function useHead(input, options) {
 }
 
 export { useHead as u };
-//# sourceMappingURL=composables.45c7473b.mjs.map
+//# sourceMappingURL=composables.0ae91900.mjs.map

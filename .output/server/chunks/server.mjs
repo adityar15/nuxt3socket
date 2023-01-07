@@ -532,7 +532,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./index.c9ab74b7.mjs').then((m) => m.default || m)
+    component: () => import('./index.2e32ecaf.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -759,7 +759,7 @@ const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroA
   }
 });
 const plugins_socketclient_ts_ssFYL5iDMi = defineNuxtPlugin(() => {
-  const socket = io$1("https://nuxt3socket-production.up.railway.app:3001");
+  const socket = io$1("https://nuxt3socket.onrender.com:3001");
   return {
     provide: {
       io: socket
@@ -913,7 +913,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./error-component.9482fd83.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./error-component.6d27e6a2.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

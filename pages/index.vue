@@ -18,8 +18,14 @@ onMounted(()=>{
         message.value = data
         console.log(data)
     })
+
+    $io.on("connect", () => {
+        console.log("connected");
+    });
+
     $io.on("connect_error", (err) => {
-        console.log(`connect_error due to ${err.message}`);
+        console.log(err.name,`connect_error due to ${err.message}`);
+        console.log(err)
     });
 
   
