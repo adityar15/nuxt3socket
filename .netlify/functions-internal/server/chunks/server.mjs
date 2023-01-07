@@ -527,7 +527,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./index.7756c120.mjs').then((m) => m.default || m)
+    component: () => import('./index.cf157844.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -745,7 +745,7 @@ const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroA
   }
 });
 const plugins_socketclient_ts_ssFYL5iDMi = defineNuxtPlugin(() => {
-  const socket = io$1("https://dreamy-taiyaki-856c76.netlify.app/:3001");
+  const socket = io$1("https://dreamy-taiyaki-856c76.netlify.app:3001");
   return {
     provide: {
       io: socket
@@ -899,7 +899,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./error-component.1b83f392.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./error-component.efa0ae0a.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());
