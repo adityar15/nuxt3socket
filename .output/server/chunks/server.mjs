@@ -532,7 +532,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./index.2e32ecaf.mjs').then((m) => m.default || m)
+    component: () => import('./index.c1a36a14.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -738,7 +738,8 @@ let io;
 const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroApp) => {
   const port = 3001;
   if (!io) {
-    io = new Server(port, { cors: { origin: "*" } });
+    io = new Server({ cors: { origin: "*" } });
+    io.listen(port);
     io.on("connection", (socket) => {
       socket.on("connect", (socket2) => {
         console.log("connected", socket2.id);
@@ -752,6 +753,9 @@ const plugins_socketserver_server_ts_IcPfaEKERO = defineNuxtPlugin(async (nitroA
       socket.on("connect_error", (err) => {
         console.log("connect_error", err);
       });
+    });
+    io.on("close", () => {
+      console.log("closed...");
     });
     globalThis.io = io;
     if (io)
@@ -913,7 +917,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./error-component.6d27e6a2.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./error-component.fd46c886.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

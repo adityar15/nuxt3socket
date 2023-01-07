@@ -11,7 +11,8 @@ export default defineNuxtPlugin(async (nitroApp) => {
 
   if(!io)
   {
-    io = new Server(port, { cors: { origin: "*" }})
+    io = new Server({ cors: { origin: "*" }})
+    io.listen(port)
     io.on("connection", (socket) => {
       
       socket.on("connect", (socket) =>{
@@ -31,8 +32,11 @@ export default defineNuxtPlugin(async (nitroApp) => {
       })
     })
 
+    io.on("close", ()=>{
+      console.log("closed...")
+    })
     
-   
+
     globalThis.io = io
     if(io)
     console.log(`Socket ready at port ${port}`)
