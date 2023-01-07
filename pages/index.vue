@@ -12,6 +12,9 @@ onMounted(()=>{
     $io.on('message', (data) => {
         console.log(data)
     })
+    $io.on("connect_error", (err) => {
+        console.log(`connect_error due to ${err.message}`);
+    });
 })
 
 
