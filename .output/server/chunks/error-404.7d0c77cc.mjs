@@ -13,14 +13,19 @@ import 'vue-router';
 import 'socket.io';
 import 'socket.io-client';
 import 'defu';
-import './stormkit.mjs';
+import './node-server.mjs';
 import 'node-fetch-native/polyfill';
+import 'http';
+import 'https';
 import 'destr';
 import 'unenv/runtime/fetch/index';
 import 'scule';
 import 'ohash';
 import 'unstorage';
 import 'radix3';
+import 'node:fs';
+import 'node:url';
+import 'pathe';
 
 const _sfc_main = {
   __name: "error-404",
