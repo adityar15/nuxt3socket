@@ -11,6 +11,11 @@ export default defineNuxtPlugin(async (nitroApp) => {
   {
     io = new Server(3001, { cors: { origin: "*" } })
     io.on("connection", (socket) => {
+      
+      socket.on("connect", (socket) =>{
+        console.log("connected", socket.id)
+      })
+      
       socket.on("disconnect", () => {
         console.log("disconnected", socket.id)
       })
