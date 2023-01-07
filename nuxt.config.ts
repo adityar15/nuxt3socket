@@ -6,6 +6,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  
 
   css: ["@/assets/css/main.css"],
   //   serverHandlers: [
@@ -16,4 +17,5 @@ export default defineNuxtConfig({
   //   ],
 
   plugins: ["~/plugins/socketserver.server.ts"],
+  
 })

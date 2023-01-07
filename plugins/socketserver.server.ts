@@ -11,7 +11,7 @@ export default defineNuxtPlugin(async (nitroApp) => {
 
   const server = http.createServer(nitroApp)
 
-  const port = 3001
+  const port = 10000
 
   
   if(!io)
