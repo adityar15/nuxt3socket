@@ -1,4 +1,4 @@
-import { u as useHead } from './composables.b26ab4a3.mjs';
+import { u as useHead } from './composables.c950fec2.mjs';
 import { mergeProps, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate } from 'vue/server-renderer';
 import { _ as _export_sfc } from './server.mjs';
@@ -24,6 +24,7 @@ import 'radix3';
 import 'node:fs';
 import 'node:url';
 import 'pathe';
+import 'ws';
 
 const _sfc_main = {
   __name: "error-500",
@@ -75,4 +76,4 @@ _sfc_main.setup = (props, ctx) => {
 const error500 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-32388612"]]);
 
 export { error500 as default };
-//# sourceMappingURL=error-500.8d9e28c8.mjs.map
+//# sourceMappingURL=error-500.831f8724.mjs.map

@@ -6,7 +6,7 @@ export default defineNuxtPlugin(() => {
 
   return {
     provide: {
-      ws: socket,
+      socket,
     },
   }
 })

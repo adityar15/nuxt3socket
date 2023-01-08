@@ -1,4 +1,10 @@
 <template>
+
+  <Head>
+    <Title>Nuxt 3 Websocket</Title>
+  </Head>
+
+
   <div class="h-screen w-screen grid place-items-center bg-black">
     <span class="flex flex-col items-centers space-y-4">
       <span class="text-gray-100">{{ message }}</span>
@@ -10,23 +16,26 @@
 <script setup lang="ts">
 const message = ref<string>("")
 
-const { $ws } = useNuxtApp()
+const { $socket } = useNuxtApp()
 
 onMounted(() => {
-  $ws.onopen = () => {
+  
+  console.log("socket", $socket)
+
+  $socket.onopen = () => {
     console.log("connected")
   }
 
-  $ws.onmessage = ({data} : any) => {
+  $socket.onmessage = ({data} : any) => {
     console.log("data", data)
     message.value = data
   }
-  $ws.onclose = function () {
+  $socket.onclose = function () {
     console.log("disconnected")
   }
 })
 
 const sendMessage = () => {
-  $ws.send(Math.random()+"")
+  $socket.send(Math.random()+"")
 }
 </script>

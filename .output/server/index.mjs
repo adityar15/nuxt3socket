@@ -16,4 +16,5 @@ import 'radix3';
 import 'node:fs';
 import 'node:url';
 import 'pathe';
+import 'ws';
 //# sourceMappingURL=index.mjs.map

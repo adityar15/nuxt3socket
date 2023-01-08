@@ -9,5 +9,5 @@ export default defineNuxtConfig({
 
   css: ["@/assets/css/main.css"],
 
-  modules: ["~/modules/socket.ts"],
+  // modules: ["~/modules/socket.ts"],
 })

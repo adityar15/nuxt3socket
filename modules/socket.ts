@@ -9,6 +9,7 @@ let io : WebSocketServer
 
 export default defineNuxtModule({
   setup(options, nuxt) {
+    console.log("in socket module")
     nuxt.hook("listen", (server) => {
       console.log("Socket listen", server.address(), server.eventNames())
       io = new WebSocketServer({ server })

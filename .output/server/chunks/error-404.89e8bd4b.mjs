@@ -1,5 +1,5 @@
 import { _ as _export_sfc, a as __nuxt_component_0$1 } from './server.mjs';
-import { u as useHead } from './composables.b26ab4a3.mjs';
+import { u as useHead } from './composables.c950fec2.mjs';
 import { mergeProps, withCtx, createTextVNode, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent } from 'vue/server-renderer';
 import 'ofetch';
@@ -24,6 +24,7 @@ import 'radix3';
 import 'node:fs';
 import 'node:url';
 import 'pathe';
+import 'ws';
 
 const _sfc_main = {
   __name: "error-404",
@@ -96,4 +97,4 @@ _sfc_main.setup = (props, ctx) => {
 const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-30d2164e"]]);
 
 export { error404 as default };
-//# sourceMappingURL=error-404.fc6fb417.mjs.map
+//# sourceMappingURL=error-404.89e8bd4b.mjs.map
