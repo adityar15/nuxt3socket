@@ -1,4 +1,4 @@
-import {WebSocketServer} from 'ws'
+import WebSocket, {WebSocketServer} from 'ws'
 import { defineNuxtModule } from "@nuxt/kit"
 
 declare global {
@@ -15,13 +15,18 @@ export default defineNuxtModule({
 
       nuxt.hook("close", () => io.close())
 
-      io.on("connection", (socket) => {
+      io.on("connection", function(socket){
 
-        socket.on("message", (data) => {
+        socket.on("message", function (data, isBinary) {
             
-            io.clients.forEach((client) => {
+            const dataString = data.toString()
+            console.log("Message received", dataString)
+            
+            io.clients.forEach(function(client){
                 if (client.readyState === WebSocket.OPEN) {
-                    client.send(data)
+                    client.send(data, {
+                        binary: isBinary
+                    })
                 }
             })
             

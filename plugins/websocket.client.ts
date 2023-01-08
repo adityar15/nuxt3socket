@@ -1,11 +1,12 @@
-
 export default defineNuxtPlugin(() => {
-    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    let socket = new WebSocket(`${wsProtocol}//nuxt3socket.onrender.com:10000`);
+  if (process.server) return
 
-    return {
-        provide: {
-            ws: socket
-        }
-    }
-});
+  const wsProtocol = window.location.protocol === "https:" ? "wss:" : "ws:"
+  let socket = new WebSocket(`${wsProtocol}//${window.location.host}`)
+
+  return {
+    provide: {
+      ws: socket,
+    },
+  }
+})

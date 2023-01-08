@@ -18,6 +18,7 @@ onMounted(() => {
   }
 
   $ws.onmessage = ({data} : any) => {
+    console.log("data", data)
     message.value = data
   }
   $ws.onclose = function () {
@@ -26,6 +27,6 @@ onMounted(() => {
 })
 
 const sendMessage = () => {
-  $ws.send(Math.random().toString(36).substring(7))
+  $ws.send(Math.random()+"")
 }
 </script>
