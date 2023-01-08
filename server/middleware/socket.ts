@@ -1,29 +1,43 @@
 import WebSocket, { WebSocketServer } from "ws"
 
-declare global {
-  var ws: WebSocketServer
+type Client = {
+  id: string
+  send: (message: string) => void
+  readyState: number
 }
 
-let ws: WebSocketServer
+declare global {
+  var wss: WebSocketServer
+  var clients: Client[]
+}
 
-export default defineEventHandler(({ node }) => {
-  console.log("in socket module")
-  if (!global.ws) {
-    ws = new WebSocketServer({ server: node.res.socket?.server })
-    ws.on("connection", function (socket) {
-      socket.on("message", function (data, isBinary) {
-        const dataString = data.toString()
-        console.log("Message received", dataString)
+let wss: WebSocketServer
+let clients: Client[] = []
 
-        ws.clients.forEach(function (client) {
-          if (client.readyState === WebSocket.OPEN) {
-            client.send(data, {
-              binary: isBinary,
+export default defineEventHandler((event) => {
+  const { appUrl } = useRuntimeConfig()
+
+  if (!global.wss) {
+    wss = new WebSocketServer({ server: event.node.res.socket?.server })
+    wss.on("connection", function (socket) {
+      // sockets = [...sockets, socket]
+      // global.sockets = sockets
+
+      socket.send("connected")
+
+      socket.on("message", function (message) {
+        wss.clients.forEach(function (client) {
+          if (client == socket && client.readyState === WebSocket.OPEN) {
+            clients.push({
+              id: message.toString(),
+              send: (data: string) => client.send(data),
+              readyState: client.readyState,
             })
+            global.clients = clients
           }
         })
       })
+      global.wss = wss
     })
-    global.ws = ws
   }
 })

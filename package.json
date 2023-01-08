@@ -8,6 +8,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.0",
     "@types/ws": "^8.5.4",
     "autoprefixer": "^10.4.13",
     "nuxt": "3.0.0",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "jiti": "^1.16.1",
+    "uuid": "^9.0.0",
     "ws": "^8.12.0"
   }
 }
