@@ -1,10 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  
-  runtimeConfig:{
-    appUrl: process.env.NODE_ENV == "production" ? "https://nuxt3socket.onrender.com" : "http://localhost:3000",
-  },
-  
+ 
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -12,7 +8,12 @@ export default defineNuxtConfig({
     },
   },
 
+  build: {
+    transpile: ["@heroicons/vue", "@headlessui/vue"],
+  },
+
   css: ["@/assets/css/main.css"],
+
 
   // modules: ["~/modules/socket.ts"],
 })

@@ -1,5 +1,5 @@
-import { _ as _export_sfc, a as __nuxt_component_0$1 } from './server.mjs';
-import { u as useHead } from './composables.ab1d4498.mjs';
+import { _ as _export_sfc, b as __nuxt_component_0$1 } from './server.mjs';
+import { u as useHead } from './composables.853a86f6.mjs';
 import { mergeProps, withCtx, createTextVNode, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent } from 'vue/server-renderer';
 import 'ofetch';
@@ -97,4 +97,4 @@ _sfc_main.setup = (props, ctx) => {
 const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-30d2164e"]]);
 
 export { error404 as default };
-//# sourceMappingURL=error-404.9d05dccd.mjs.map
+//# sourceMappingURL=error-404.7bc1da85.mjs.map

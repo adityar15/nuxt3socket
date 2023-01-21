@@ -15,14 +15,13 @@ let wss: WebSocketServer
 let clients: Client[] = []
 
 export default defineEventHandler((event) => {
-  const { appUrl } = useRuntimeConfig()
-
+  
   if (!global.wss) {
     wss = new WebSocketServer({ server: event.node.res.socket?.server })
+    
+    
     wss.on("connection", function (socket) {
-      // sockets = [...sockets, socket]
-      // global.sockets = sockets
-
+  
       socket.send("connected")
 
       socket.on("message", function (message) {
