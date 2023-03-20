@@ -14,14 +14,17 @@ declare global {
 let wss: WebSocketServer
 let clients: Client[] = []
 
+let port = 8080
+
 export default defineEventHandler((event) => {
-  
+
   if (!global.wss) {
-    wss = new WebSocketServer({ server: event.node.res.socket?.server })
-    
-    
+    // @ts-ignore
+    wss = new WebSocketServer({ port: port, host: event.node.res.socket?.server.address().address })
+
+
     wss.on("connection", function (socket) {
-  
+
       socket.send("connected")
 
       socket.on("message", function (message) {
